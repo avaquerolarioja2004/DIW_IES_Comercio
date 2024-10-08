@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(184, 181, 188);
+}
+
+th{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    font-style: italic;
+}
+
+td{
+    text-decoration: underline;
+    text-decoration: overline;
+}
+.diw{
+    background-color:rgb(29, 156, 15);
+}
+
+.daw{
+    background-color:rgb(146, 32, 163);
+}
+
+.dwc{
+    background-color:rgb(203, 46, 46);
+}
+
+.dwe{
+    background-color:rgb(238, 218, 61);
+}
+
+.libre{
+    background-color: aqua;
+}
+
+.recreo{
+    background-color: rgb(57, 200, 200);
+}
+/*
+cada asignatura de un color
+los textos de las columnas con overline y filas underline
+los tititulos fondo negro, texto blanco y en cursiva.
+*/
