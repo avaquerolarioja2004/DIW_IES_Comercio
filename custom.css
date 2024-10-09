@@ -20,11 +20,11 @@ td{
     background-color:rgb(146, 32, 163);
 }
 
-.dwc{
+.dwec{
     background-color:rgb(203, 46, 46);
 }
 
-.dwe{
+.dwes{
     background-color:rgb(238, 218, 61);
 }
 
@@ -34,6 +34,13 @@ td{
 
 .recreo{
     background-color: rgb(57, 200, 200);
+    text-align: center;
+}
+
+.horas{
+    background-color: rgb(52, 50, 50);
+    color: rgb(255, 255, 255);
+    font-style: italic;
 }
 /*
 cada asignatura de un color

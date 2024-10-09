@@ -1,92 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Horario DAW-24/25</title>
-    <link rel="stylesheet" href="custom.css">
-</head>
-<body>
-    <h1>HORARIO 2024/2025 DAW</h1>
-    
-    <table>
-        <tr>
-            <th>Horario</th>
-            <th>Lunes</th>
-            <th>Martes</th>
-            <th>Miércoles</th>
-            <th>Jueves</th>
-            <th>Viernes</th>
-        </tr>
-
-        <!-- Primera hora -->
-        <tr>
-            <th>16:00 - 16:50</th>
-            <td class="diw">DIW (Desarrollo de Interfaces Web)</td>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-            <td class="dwc">DWEC (Desarrollo Web en Entorno Cliente)</td>
-            <td class="diw">DIW (Desarrollo de Interfaces Web)</td>
-            <td class="daw">DAW (Desarrollo de Aplicaciones Web)</td>
-        </tr>
-
-        <!-- Segunda hora -->
-        <tr>
-            <th>16:55 - 17:45</th>
-            <td class="diw">DIW (Desarrollo de Interfaces Web)</td>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-            <td class="dwc">DWEC (Desarrollo Web en Entorno Cliente)</td>
-            <td class="diw">DIW (Desarrollo de Interfaces Web)</td>
-            <td class="daw">DAW (Desarrollo de Aplicaciones Web)</td>
-        </tr>
-
-        <!-- Tercera hora -->
-        <tr>
-            <th>17:50 - 18:40</th>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-            <td class="daw">DAW (Desarrollo de Aplicaciones Web)</td>
-            <td class="daw">DAW (Desarrollo de Aplicaciones Web)</td>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-            <td class="diw">DIW (Desarrollo de Interfaces Web)</td>
-        </tr>
-
-        <!-- Recreo -->
-        <tr>
-            <th>18:40 - 19:05</th>
-            <td class="recreo">RECREO</td>
-            <td class="recreo">RECREO</td>
-            <td class="recreo">RECREO</td>
-            <td class="recreo">RECREO</td>
-            <td class="recreo">RECREO</td>
-        </tr>
-
-        <!-- Cuarta hora -->
-        <tr>
-            <th>19:05 - 19:55</th>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-            <td class="dwc">DWEC (Desarrollo Web en Entorno Cliente)</td>
-            <td class="daw">DAW (Desarrollo de Aplicaciones Web)</td>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-            <td class="diw">DIW (Desarrollo de Interfaces Web)</td>
-        </tr>
-
-        <!-- Quinta hora -->
-        <tr>
-            <th>20:00 - 20:50</th>
-            <td class="dwc">DWEC (Desarrollo Web en Entorno Cliente)</td>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-            <td class="libre">LIBRE</td>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-        </tr>
-
-        <!-- Sexta hora -->
-        <tr>
-            <th>20:55 - 21:45</th>
-            <td class="libre">LIBRE</td>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-            <td class="libre">LIBRE</td>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-            <td class="dwe">DWES (Desarrollo Web en Entorno Servidor)</td>
-        </tr>
-    </table>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="custom.css">
+        <title>Horario DAW-24/25</title>
+    </head>
+    <body>
+        <h1>HORARIO 2024/2025 DAW</h1>
+        <table>
+            <tr>
+                <th class='dia'>Horario</th>
+                <th class='dia'>Lunes</th>
+                <th class='dia'>Martes</th>
+                <th class='dia'>Miércoles</th>
+                <th class='dia'>Jueves</th>
+                <th class='dia'>Viernes</th>
+            </tr>
+            <!-- Primera hora -->
+            <tr>
+                <td class='horas'>16:00 - 16:50</td>
+                <td class='diw' rowspan='2'>DIW</td>
+                <td class='dwes'>DWES</td>
+                <td class='dwec' rowspan='2'>DWEC</td>
+                <td class='diw' rowspan='2'>DIW</td>
+                <td class='daw' rowspan='2'>DAW</td>
+            </tr>
+            <!-- Segunda hora -->
+            <tr>
+                <td class='horas'>16:55 - 17:45</td>
+                <td class='diw'>DIW</td>
+            </tr>
+            <!-- Tercera hora -->
+            <tr>
+                <td class='horas'>17:50 - 18:40</td>
+                <td class='dwes'>DWES</td>
+                <td class='daw'>DAW</td>
+                <td class='daw'>DAW</td>
+                <td class='dwes'>DWES</td>
+                <td class='diw'>DIW</td>
+            </tr>
+            <!-- Recreo -->
+            <tr>
+                <td class='horas'>18:40 - 19:05</td>
+                <td class='recreo' colspan='5'>RECREO</td>
+            </tr>
+            <!-- Cuarta hora -->
+            <tr>
+                <td class='horas'>19:05 - 19:55</td>
+                <td class='dwes'>DWES</td>
+                <td class='dwec' rowspan='2'>DWEC</td>
+                <td class='daw'>DAW</td>
+                <td class='dwes'>DWES</td>
+                <td class='diw'>DIW</td>
+            </tr>
+            <!-- Quinta hora -->
+            <tr>
+                <td class='horas'>20:00 - 20:50</td>
+                <td class='dwec' rowspan='2'>DWEC</td>
+                <td class='dwes' rowspan='2'>DWES</td>
+                <td class='libre' rowspan='2'>LIBRE</td>
+                <td class='dwes' rowspan='2'>DWES</td>
+            </tr>
+            <!-- Sexta hora -->
+            <tr>
+                <td class='horas'>20:55 - 21:45</td>
+                <td class='libre'>LIBRE</td>
+            </tr>
+        </table>
+    </body>
 </html>
