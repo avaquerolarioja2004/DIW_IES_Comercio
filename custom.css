@@ -1,5 +1,6 @@
 body{
-    background-color: rgb(184, 181, 188);
+    background-color: blue;
+    margin: 0px;
 }
 
 th{
@@ -8,10 +9,6 @@ th{
     font-style: italic;
 }
 
-td{
-    text-decoration: underline;
-    text-decoration: overline;
-}
 .diw{
     background-color:rgb(29, 156, 15);
 }
@@ -41,6 +38,30 @@ td{
     background-color: rgb(52, 50, 50);
     color: rgb(255, 255, 255);
     font-style: italic;
+}
+
+/* Estilo para las columnas */
+table td:nth-child(1) {
+    text-decoration: overline;
+}
+
+/* Estilo para las filas */
+table tr:nth-child(2) td {
+    text-decoration: underline;
+}
+td{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+}
+article{
+    background-color: red;
+    border: 1px solid rgb(18, 2, 255);
+    background-image: url(./img/ash.jpg);
+}
+
+*{
+    color: black;
 }
 /*
 cada asignatura de un color
