@@ -54,17 +54,3 @@ td{
     height: 50px;
     text-align: center;
 }
-article{
-    background-color: red;
-    border: 1px solid rgb(18, 2, 255);
-    background-image: url(./img/ash.jpg);
-}
-
-*{
-    color: black;
-}
-/*
-cada asignatura de un color
-los textos de las columnas con overline y filas underline
-los tititulos fondo negro, texto blanco y en cursiva.
-*/
