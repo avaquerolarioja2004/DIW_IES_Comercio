@@ -1,0 +1,56 @@
+body{
+    background-color: blue;
+    margin: 0px;
+}
+
+th{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    font-style: italic;
+}
+
+.diw{
+    background-color:rgb(29, 156, 15);
+}
+
+.daw{
+    background-color:rgb(146, 32, 163);
+}
+
+.dwec{
+    background-color:rgb(203, 46, 46);
+}
+
+.dwes{
+    background-color:rgb(238, 218, 61);
+}
+
+.libre{
+    background-color: aqua;
+}
+
+.recreo{
+    background-color: rgb(57, 200, 200);
+    text-align: center;
+}
+
+.horas{
+    background-color: rgb(52, 50, 50);
+    color: rgb(255, 255, 255);
+    font-style: italic;
+}
+
+/* Estilo para las columnas */
+table td:nth-child(1) {
+    text-decoration: overline;
+}
+
+/* Estilo para las filas */
+table tr:nth-child(2) td {
+    text-decoration: underline;
+}
+td{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+}

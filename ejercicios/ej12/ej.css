@@ -1,0 +1,36 @@
+/*
+
+body 'trebuchet ms', arial, sans-serif #FFF #555
+h1, h2, h3, h4, h5 #362C20
+h1, h2, h3 'century gothic', arial #000
+a, a:hover
+ul li
+header #000 border-bottom: 1px solid #3d3d3d;
+banner background: transparent url(banner.jpg) no-repeat; border: 10px solid #DDD;
+logo background: #1d1d1d; position: relative;
+#logo #logo_text { position: absolute; top: 10px; left: 0;}
+menubar { width: 872px; height: 45px; padding-right: 8px; background: #2D2D2D; border-top: 1px solid #3D3D3D;}
+content ul li, .sidebar ul li background: url(bullet.png) no-repeat;
+
+*/
+
+body{
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background-color: #FFF;
+    color: #555;
+}
+
+h1,h2,h3,h4,h5{
+    color: #362C20;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'century-gothic', arial;
+    color: #000;
+}
+
+ul a:hover{
+    font-size: 20px;
+}
