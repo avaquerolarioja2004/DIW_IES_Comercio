@@ -1,0 +1,61 @@
+.comic div {
+    display: flex;
+}
+
+.comic {
+    display: inline-block;
+    padding: 10px;
+    background-color: antiquewhite;
+    border: 3px solid black;
+    margin-left: 2%;
+}
+
+section {
+    display: flex;
+    width: 50%;
+}
+
+img{
+    opacity: 1;
+    transition: all 5s;
+}
+
+.row2 img{
+    width: 150px;
+}
+
+/*
+Animaciones
+*/
+
+.row1 img:hover{
+    opacity: 0;
+}
+
+.row2 img:hover{
+    width: 200px;
+}
+
+.row2 #izquierda{
+    position: absolute;
+    left: 857px;
+    opacity: 1;
+    width: 150px;
+}
+
+#izquierda:hover{
+    opacity: 0.5;
+    left: 1000px;
+    width: 50px;
+    padding: 50px;
+}
+
+#ejemplo{
+    top: 500px;
+}
+
+#ejemplo:hover{
+    position: absolute;
+    bottom: 0;
+    
+}
