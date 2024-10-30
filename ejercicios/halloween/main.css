@@ -1,0 +1,123 @@
+body {
+    margin: 0 auto;
+    background-color: darkmagenta;
+}
+
+.background {
+    margin: 0 auto;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    left: 50px;
+    right: 50px; 
+    background: url('img_hallowen/7726865.jpg') no-repeat center center;
+    background-size: contain;
+}
+
+/* Marcos laterales */
+.i-barra, .d-barra {
+    position: fixed;  /* Cambia a fixed para que se mantengan en sus posiciones */
+    top: 0;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.i-barra {
+    left: 0;  /* Mantiene la barra izquierda en el lado izquierdo */
+}
+
+.d-barra {
+    right: 0;  /* Cambia esto a 0 para que la barra derecha esté en el lado derecho */
+}
+
+/* Estilos de personajes con tamaños en píxeles */
+.vampiro, .zombie, .calabaza, .cuerda, .murcielagos, .ojo1, .ojo2, .ahorcado {
+    position: absolute;
+    z-index: 3;
+    transition: all 1s ease;
+}
+
+.vampiro {
+    top: 50px;
+    left: 200px;
+    width: 80px;
+}
+
+.zombie {
+    top: 20px;
+    right: 200px;
+    width: 120px;
+}
+
+.calabaza {
+    top: 30px;
+    left: 400px;
+    width: 80px;
+}
+
+.cuerda {
+    top: 50px;
+    left: 500px;
+    width: 40px;
+}
+
+.murcielagos {
+    top: 30px;
+    right: 150px;
+    width: 60px;
+}
+
+.ojo1 {
+    top: 100px;
+    left: 600px;
+    width: 30px;
+}
+
+.ojo2 {
+    top: 80px;
+    right: 300px;
+    width: 30px;
+}
+
+/* Transiciones */
+.vampiro:hover {
+    transform: translateY(-20px) rotate(10deg);
+}
+
+.zombie:hover {
+    transform: scale(1.2) rotate(-10deg);
+}
+
+.calabaza:hover {
+    transform: rotate(15deg);
+    filter: brightness(1.5);
+}
+
+.cuerda:hover {
+    transform: scale(1.3);
+    opacity: 0.7;
+}
+
+.murcielagos:hover {
+    transform: translateY(-20px);
+    filter: contrast(1.5);
+}
+
+.ojo1:hover {
+    transform: scale(1.5) rotate(20deg);
+}
+
+.ojo2:hover {
+    transform: scale(1.5) rotate(-20deg);
+}
