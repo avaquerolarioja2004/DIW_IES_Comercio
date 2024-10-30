@@ -5,10 +5,9 @@ body {
 
 .background {
     margin: 0 auto;
-    position: absolute;
-    width: 90%;
-    height: 100%;
-    display: flex;
+    position: relative;
+    width: 1000px;
+    height: 650px;
     left: 50px;
     right: 50px; 
     background: url('img_hallowen/7726865.jpg') no-repeat center center;
@@ -17,7 +16,7 @@ body {
 
 /* Marcos laterales */
 .i-barra, .d-barra {
-    position: fixed;  /* Cambia a fixed para que se mantengan en sus posiciones */
+    position: fixed;  
     top: 0;
     width: 50px;
     height: 100%;
@@ -34,17 +33,16 @@ body {
 }
 
 .i-barra {
-    left: 0;  /* Mantiene la barra izquierda en el lado izquierdo */
+    left: 0;  
 }
 
 .d-barra {
-    right: 0;  /* Cambia esto a 0 para que la barra derecha esté en el lado derecho */
+    right: 0;  
 }
 
 /* Estilos de personajes con tamaños en píxeles */
-.vampiro, .zombie, .calabaza, .cuerda, .murcielagos, .ojo1, .ojo2, .ahorcado {
+img{
     position: absolute;
-    z-index: 3;
     transition: all 1s ease;
 }
 
@@ -88,6 +86,12 @@ body {
     top: 80px;
     right: 300px;
     width: 30px;
+}
+
+.ahorcado{
+    top: 80px;
+    right: 300px;
+    width: 80px;
 }
 
 /* Transiciones */
