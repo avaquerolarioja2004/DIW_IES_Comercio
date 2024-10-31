@@ -6,8 +6,8 @@ body {
 .background {
     margin: 0 auto;
     position: relative;
-    width: 1000px;
-    height: 650px;
+    width: 1041px;
+    height: 695px;
     left: 50px;
     right: 50px; 
     background: url('img_hallowen/7726865.jpg') no-repeat center center;
@@ -47,56 +47,72 @@ img{
 }
 
 .vampiro {
-    top: 50px;
-    left: 200px;
-    width: 80px;
+    top: 228px;
+    left: 77px;
+    width: 35px;
+    opacity: 0;
 }
 
 .zombie {
-    top: 20px;
-    right: 200px;
+    top: 473px;
+    right: 91px;
     width: 120px;
 }
 
 .calabaza {
-    top: 30px;
+    top: 600px;
     left: 400px;
-    width: 80px;
+    width: 45px;
 }
 
 .cuerda {
-    top: 50px;
-    left: 500px;
+    top: 436px;
+    left: 600px;
     width: 40px;
+    opacity: 0.2;
 }
 
 .murcielagos {
     top: 30px;
-    right: 150px;
-    width: 60px;
+    left: 100px;
+    width: 80px;
+    opacity: 0.3;
 }
 
 .ojo1 {
-    top: 100px;
-    left: 600px;
-    width: 30px;
+    top: 552px;
+    left: 703px;
+    width: 42px;
 }
 
 .ojo2 {
-    top: 80px;
-    right: 300px;
-    width: 30px;
+    top: 615px;
+    right: 781px;
+    width: 59px;
 }
 
 .ahorcado{
-    top: 80px;
+    top: 143px;
     right: 300px;
-    width: 80px;
+    width: 45px;
+}
+
+.araña{
+    width: 50px;
+    left: 20px;
+    top: 127px;
+}
+
+.luna{
+    width: 113px;
+    left: 447px;
+    top: 218px;
 }
 
 /* Transiciones */
 .vampiro:hover {
-    transform: translateY(-20px) rotate(10deg);
+    transform: scale(1.1);
+    opacity: 1;
 }
 
 .zombie:hover {
@@ -110,18 +126,31 @@ img{
 
 .cuerda:hover {
     transform: scale(1.3);
-    opacity: 0.7;
+    opacity: 1;
 }
 
-.murcielagos:hover {
-    transform: translateY(-20px);
-    filter: contrast(1.5);
+.ahorcado:hover {
+    transform: scaleX(-1);
+}
+
+.ahorcado:hover ~ .murcielagos {
+    transform: translateX(700px);
+    opacity: 1;
 }
 
 .ojo1:hover {
-    transform: scale(1.5) rotate(20deg);
+    transform: scale(5);
+    filter: brightness(10) saturate(200%) drop-shadow(0 0 10px red);
 }
 
 .ojo2:hover {
-    transform: scale(1.5) rotate(-20deg);
+    transform: scale(1.1) rotate(-2200deg);
+}
+
+.araña:hover {
+    top: 250px; 
+}
+
+.luna:hover{
+    filter: brightness(0) saturate(200%) drop-shadow(0 0 10px red);
 }

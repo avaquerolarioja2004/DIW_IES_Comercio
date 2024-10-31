@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <audio class="ahorcado_audio" src="audio/grito.mp3"></audio>
+    <audio class="fondo_audio" src="audio/fondo.mp3"></audio>
+    <audio class="zombie_audio" src="audio/zombie.mp3"></audio>
+    <audio class="bruja_audio" src="audio/bruja.mp3"></audio>
     <div class="i-barra">AVT</div>
     <div class="background">
         <img src="img_hallowen/vampiro.png" alt="vampiro" class="vampiro">
@@ -20,10 +24,52 @@
         <img src="img_hallowen/ojo.png" alt="ojo1" class="ojo1">
         <img src="img_hallowen/ZombiHD.webp" alt="zombie" class="zombie">
         <img src="img_hallowen/ojo.png" alt="ojo2" class="ojo2">
+        <img src="img_hallowen/araña.png" alt="araña" class="araña">
+        <img src="img_hallowen/luna.png" alt="luna" class="luna">
     </div>
     <div class="d-barra">AVT</div>
 
+    <script>
+        const ahorcado = document.getElementsByClassName('ahorcado')[0];
+        const ahorcadoAudio = document.getElementsByClassName('ahorcado_audio')[0];
+        const fondo = document.getElementsByTagName('body')[0];
+        const fondo_audio = document.getElementsByClassName('fondo_audio')[0];
+        const zombie = document.getElementsByClassName('zombie')[0];
+        const zombie_audio = document.getElementsByClassName('zombie_audio')[0];
+        const luna = document.getElementsByClassName('luna')[0];
+        const bruja_audio = document.getElementsByClassName('bruja_audio')[0];
 
+        luna.addEventListener('mouseover', () => {
+            bruja_audio.play();
+        });
+
+        luna.addEventListener('mouseleave', () => {
+            bruja_audio.pause();
+            bruja_audio.currentTime = 0;
+        });
+    
+        ahorcado.addEventListener('mouseover', () => {
+            ahorcadoAudio.play();
+        });
+    
+        ahorcado.addEventListener('mouseleave', () => {
+            ahorcadoAudio.pause();
+            ahorcadoAudio.currentTime = 0;
+        });
+    
+        fondo.addEventListener('mouseover', () => {
+            fondo_audio.play();
+        });
+    
+        zombie.addEventListener('mouseover', () => {
+            zombie_audio.play();
+        });
+    
+        zombie.addEventListener('mouseleave', () => {
+            zombie_audio.pause();
+            zombie_audio.currentTime = 0;
+        });
+    </script>    
 </body>
 
 </html>
