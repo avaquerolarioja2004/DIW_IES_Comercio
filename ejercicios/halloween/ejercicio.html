@@ -16,6 +16,7 @@
     <audio class="bruja_audio" src="audio/bruja.mp3"></audio>
     <div class="i-barra">AVT</div>
     <div class="background">
+        <a href="#" class="boton">Activa los efectos</a>
         <img src="img_hallowen/vampiro.png" alt="vampiro" class="vampiro">
         <img src="img_hallowen/ahorcado.png" alt="ahorcado" class="ahorcado">
         <img src="img_hallowen/calabaza.png" alt="calabaza" class="calabaza">
@@ -26,6 +27,7 @@
         <img src="img_hallowen/ojo.png" alt="ojo2" class="ojo2">
         <img src="img_hallowen/araña.png" alt="araña" class="araña">
         <img src="img_hallowen/luna.png" alt="luna" class="luna">
+        <img src="img_hallowen/bruja.png" alt="bruja" class="bruja">
     </div>
     <div class="d-barra">AVT</div>
 
@@ -38,6 +40,11 @@
         const zombie_audio = document.getElementsByClassName('zombie_audio')[0];
         const luna = document.getElementsByClassName('luna')[0];
         const bruja_audio = document.getElementsByClassName('bruja_audio')[0];
+
+        ahorcadoAudio.volume = 0.3;
+        fondo_audio.volume = 0.3;
+        zombie_audio.volume = 0.3;
+        bruja_audio.volume = 0.3;
 
         luna.addEventListener('mouseover', () => {
             bruja_audio.play();

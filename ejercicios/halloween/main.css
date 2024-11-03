@@ -9,14 +9,15 @@ body {
     width: 1041px;
     height: 695px;
     left: 50px;
-    right: 50px; 
+    right: 50px;
     background: url('img_hallowen/7726865.jpg') no-repeat center center;
     background-size: contain;
 }
 
 /* Marcos laterales */
-.i-barra, .d-barra {
-    position: fixed;  
+.i-barra,
+.d-barra {
+    position: fixed;
     top: 0;
     width: 50px;
     height: 100%;
@@ -33,24 +34,30 @@ body {
 }
 
 .i-barra {
-    left: 0;  
+    left: 0;
 }
 
 .d-barra {
-    right: 0;  
+    right: 0;
 }
 
-/* Estilos de personajes con tamaños en píxeles */
-img{
+img {
     position: absolute;
-    transition: all 1s ease;
+    transition: all 0.6s ease-in-out;
 }
 
+/* Efectos de hover para los elementos */
 .vampiro {
     top: 228px;
     left: 77px;
     width: 35px;
     opacity: 0;
+}
+
+.vampiro:hover,
+.boton:hover ~ .vampiro {
+    transform: scale(1.1);
+    opacity: 1;
 }
 
 .zombie {
@@ -59,10 +66,34 @@ img{
     width: 120px;
 }
 
+.zombie:hover,
+.boton:hover ~ .zombie {
+    transform: scale(1.2) rotate(-10deg);
+}
+
 .calabaza {
     top: 600px;
     left: 400px;
     width: 45px;
+}
+
+.calabaza:hover,
+.boton:hover ~ .calabaza {
+    transform: rotate(15deg);
+    filter: brightness(1.5);
+}
+
+.bruja {
+    top: 200px;
+    left: 400px;
+    width: 100px;
+    opacity: 0;
+}
+
+.luna:hover ~ .bruja,
+.boton:hover ~ .bruja {
+    opacity: 1;
+    transform: translate(150px, -50px);
 }
 
 .cuerda {
@@ -70,6 +101,12 @@ img{
     left: 600px;
     width: 40px;
     opacity: 0.2;
+}
+
+.cuerda:hover,
+.boton:hover ~ .cuerda {
+    transform: scale(1.3);
+    opacity: 1;
 }
 
 .murcielagos {
@@ -85,72 +122,68 @@ img{
     width: 42px;
 }
 
+.ojo1:hover,
+.boton:hover ~ .ojo1 {
+    transform: scale(5);
+    filter: brightness(10) saturate(200%) drop-shadow(0 0 10px red);
+}
+
 .ojo2 {
     top: 615px;
     right: 781px;
     width: 59px;
 }
 
-.ahorcado{
+.ojo2:hover,
+.boton:hover ~ .ojo2 {
+    transform: scale(1.1) rotate(-2200deg);
+}
+
+.ahorcado {
     top: 143px;
     right: 300px;
     width: 45px;
 }
 
-.araña{
+.ahorcado:hover,
+.boton:hover ~ .ahorcado {
+    transform: scaleX(-1);
+}
+
+.ahorcado:hover ~ .murcielagos,
+.boton:hover ~ .murcielagos {
+    transform: translateX(700px);
+    opacity: 1;
+}
+
+.araña {
     width: 50px;
     left: 20px;
     top: 127px;
 }
 
-.luna{
+.araña:hover,
+.boton:hover ~ .araña {
+    top: 250px;
+}
+
+.luna {
     width: 113px;
     left: 447px;
     top: 218px;
 }
 
-/* Transiciones */
-.vampiro:hover {
-    transform: scale(1.1);
-    opacity: 1;
-}
-
-.zombie:hover {
-    transform: scale(1.2) rotate(-10deg);
-}
-
-.calabaza:hover {
-    transform: rotate(15deg);
-    filter: brightness(1.5);
-}
-
-.cuerda:hover {
-    transform: scale(1.3);
-    opacity: 1;
-}
-
-.ahorcado:hover {
-    transform: scaleX(-1);
-}
-
-.ahorcado:hover ~ .murcielagos {
-    transform: translateX(700px);
-    opacity: 1;
-}
-
-.ojo1:hover {
-    transform: scale(5);
-    filter: brightness(10) saturate(200%) drop-shadow(0 0 10px red);
-}
-
-.ojo2:hover {
-    transform: scale(1.1) rotate(-2200deg);
-}
-
-.araña:hover {
-    top: 250px; 
-}
-
-.luna:hover{
+.luna:hover,
+.boton:hover ~ .luna {
     filter: brightness(0) saturate(200%) drop-shadow(0 0 10px red);
+}
+
+.boton {
+    top: 20px;
+    left: -114px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    font-size: 12px;
+    position: absolute;
 }
