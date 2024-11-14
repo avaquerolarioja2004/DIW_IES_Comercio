@@ -21,12 +21,27 @@ body{
     top: 337px;
     left: 0px;
     transform: rotateY(180deg);
-    animation: mover 4s ;
+    animation-name: mover;
+    animation-duration: 1.6s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-in;
+}
+
+#coche img {
+    width: 470px;
+    height: 170px;
+    animation-name: aplastar;
+    animation-duration: 2s;
+    animation-delay: 1.4s;
     animation-fill-mode: forwards;
 }
 
-#coche img{
-    width: 470px;
+@keyframes aplastar {
+    from { width: 470px; 
+    height: 170px;}
+    to { width: 300px; 
+    height: 170px;}
 }
 
 @keyframes mover {
@@ -46,18 +61,91 @@ body{
 
 #explosion{
     position: absolute;
-    top: 196px;
-    left: 1111px;
+    top: 56px;
+    left: 845px;
 }
 
 #explosion img{
-    width: 368px;
+    width: 500px;
     opacity: 0;
-    animation: explosion 6s;
+    animation-name: explosion;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
+    animation-delay: 3.8s;
+}
+
+#escombro{
+    position: absolute;
+    top: 409px;
+    left: 791px;
+}
+
+#escombro img{
+    width: 120px;
+    opacity: 0;
+    animation-name: escombro;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.3s;
+}
+
+@keyframes escombro {
+    from{opacity: 0;}
+    to{opacity: 1;}
+    
 }
 
 @keyframes explosion {
     from{opacity: 0;}
     to{opacity: 1;}
+}
+
+#columna{
+    position: absolute;
+    top: 274px;
+    left: 720px;
+    animation-name: caer;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.2s; 
+}
+
+@keyframes caer {
+    from{transform: rotateZ(0deg);}
+    to{
+        transform-origin: 150px 250px;
+        transform: rotateZ(50deg);}
+}
+
+#columna img{
+    width: 230px;
+}
+
+#columna2{
+    position: absolute;
+    top: 350px;
+    left: 624px;
+}
+
+#columna2 img{
+    width: 230px;
+}
+
+#humo{
+    position: absolute;
+    top: 244px;
+    left: 795px;
+    opacity: 0;
+    animation-name: humo;
+    animation-duration: 1.2s;
+    animation-delay: 3s; 
+}
+
+@keyframes humo {
+    from{opacity: 0;}
+    20%{opacity: 0.5;}
+    40%{opacity: 0.8;}
+    50%{opacity: 1;}
+    80%{opacity: 0.2;}
+    100%{opacity: 0;}
 }
