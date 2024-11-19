@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset='utf-8'>
@@ -11,9 +11,22 @@
 
 <body>
     <div id="fondo">
+        <div id="sol"></div>
+        <div class="pajaros">
+            <img src="./img/pajaro.gif" alt="" id="pajaro1">
+            <img src="./img/pajaro.gif" alt="" id="pajaro2">
+            <img src="./img/pajaro.webp" alt="" id="pajaro3">
+            <img src="./img/pajaro.gif" alt="" id="pajaro4">
+        </div>
         <div id="muro"><img src="./img/muro.webp" alt="muro"></div>
         <div id="escombro"><img src="./img/escombro.webp" alt=""></div>
         <div id="columna"><img src="./img/columna.webp" alt="columna"></div>
+        <div class="digglets">
+            <img id="digglet1" src="./img/digglet.gif" alt="digglet">
+            <img id="digglet2" src="./img/digglet.gif" alt="digglet">
+            <img id="digglet3" src="./img/digglet.gif" alt="digglet">
+        </div>
+        <div><img id="ambulancia" src="./img/ambulancia.png" alt="ambulancia"></div>
         <div id="coche"><img src="./img/coche.png" alt="coche"></div>
         <div id="humo"><img src="./img/humo.gif" alt="humo"></div>
         <div id="columna2"><img src="./img/columna.webp" alt="columna2"></div>
@@ -21,6 +34,71 @@
         <div id="suelo"></div>
         <button id="llamar112" style="display: none;">Llamar 112</button>
     </div>
+    <audio id="sonidoImpacto" src="./audio/choque.mp3"></audio>
+    <audio id="sonidoImproperio" src="./audio/improperio.mp3"></audio>
+    <audio id="sonidoAmbulancia" src="./audio/ambulancia.mp3"></audio>
+    <audio id="sonidoExplosion" src="./audio/explosion.mp3"></audio>
+    <audio id="sonidoJijijaja" src="./audio/jijijija.mp3"></audio>
+
+    <script>
+        const ambulancia = document.getElementById('ambulancia');
+        const coche = document.getElementById('coche');
+        const sonidoImpacto = document.getElementById('sonidoImpacto');
+        const sonidoImproperio = document.getElementById('sonidoImproperio');
+        const sonidoAmbulancia = document.getElementById('sonidoAmbulancia');
+        const fondo = document.getElementsByTagName('body')[0];
+        const llamar112 = document.getElementById('llamar112');
+        const improperio = document.getElementById('improperio');
+        const sonidoExplosion = document.getElementById('sonidoExplosion');
+        const sonidoJijijaja = document.getElementById('sonidoJijijaja');
+        sonidoImpacto.playbackRate = 1.5;
+        sonidoImproperio.playbackRate = 1.5;
+        const digglet1 = document.getElementById('digglet1');
+
+        explosion.volume = 0.3;
+        sonidoImpacto.volume = 0.3;
+        sonidoImproperio.volume = 0.3;
+        sonidoAmbulancia.volume = 0.3;
+        sonidoExplosion.volume = 1;
+        sonidoJijijaja.volume =1;
+        const duracionAnimacionCoche = 2000;
+
+        setTimeout(() => {
+            sonidoImproperio.play();
+        }, duracionAnimacionCoche / 4);
+
+
+        setTimeout(() => {
+            sonidoImpacto.play();
+        }, duracionAnimacionCoche- 1350);
+
+        coche.addEventListener('animationend', (event) => {
+            if (event.animationName === 'mover') {
+                setTimeout(() => {
+                    llamar112.style.display = 'block';
+                }, 500);
+            }
+        });
+
+        explosion.addEventListener('animationstart', (event) => {
+            if (event.animationName === 'explosion') {
+                sonidoExplosion.play();
+            }
+        });
+
+        llamar112.addEventListener('click', () => {
+            sonidoAmbulancia.play();
+            ambulancia.style.animationName = 'ambulancia';
+            ambulancia.style.animationDuration = '3s';
+            ambulancia.style.animationFillMode = 'forwards';
+        });
+
+        digglet1.addEventListener('animationend', (event) => {
+            if (event.animationName === 'subirBajar') {
+                sonidoJijijaja.play();
+            }
+        });
+    </script>
 </body>
 
 </html>

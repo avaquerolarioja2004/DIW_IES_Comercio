@@ -1,22 +1,129 @@
-#fondo{
-    background-color: rgb(81, 114, 185);
+#fondo {
+    background-image: url('./img/cielo.webp');
+    background-size: cover;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column-reverse;
 }
 
-body{
+body {
     margin: 0 auto;
 }
 
-#suelo{
-    width: 100%;
-    height: 30%;
-    background-color: darkgreen;
+#sol {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgb(149, 149, 147);
+    animation-name: changeColor;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
-#coche{
+.pajaros img {
+    position: absolute;
+    width: 75px;
+    animation-name: volar_en_circulos;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+#pajaro1 {
+    top: 70px;
+    left: 55px;
+}
+
+#pajaro2 {
+    top: 119px;
+    left: 406px;
+}
+
+#pajaro3 {
+    top: 263px;
+    left: 692px;
+    transform: rotateZ(-20deg);
+    width: 85px;
+
+}
+
+#llamar112 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: none;
+    font-size: 12px;
+    padding: 5px;
+}
+
+#pajaro4 {
+    top: 44px;
+    left: 800px;
+}
+
+@keyframes volar_en_circulos {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(50px, -50px) rotate(90deg);
+    }
+
+    50% {
+        transform: translate(100px, 0) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(50px, 50px) rotate(270deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+
+@keyframes changeColor {
+    0% {
+        background: rgb(149, 149, 147);
+        left: 0.325;
+        opacity: 0;
+    }
+
+    20% {
+        background: rgb(255, 85, 0);
+        opacity: 0.8;
+    }
+
+    50% {
+        background: rgb(255, 0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        background: rgb(255, 255, 0);
+        left: 80%;
+        width: 220px;
+        height: 220px;
+    }
+}
+
+#suelo {
+    width: 100%;
+    height: 30%;
+    background-image: url('./img/cesped.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#coche {
     position: absolute;
     top: 337px;
     left: 0px;
@@ -32,55 +139,101 @@ body{
     width: 470px;
     height: 170px;
     animation-name: aplastar;
-    animation-duration: 2s;
+    animation-duration: 2.4s;
     animation-delay: 1.4s;
     animation-fill-mode: forwards;
 }
 
 @keyframes aplastar {
-    from { width: 470px; 
-    height: 170px;}
-    to { width: 300px; 
-    height: 170px;}
+    from {
+        width: 470px;
+        height: 170px;
+    }
+
+    99% {
+        opacity: 1;
+        width: 300px;
+        height: 170px;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes vibrar {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    25% {
+        transform: rotateZ(7.5deg);
+    }
+
+    50% {
+        transform: rotateZ(15deg);
+    }
+
+    75% {
+        transform: rotateZ(7.5deg);
+    }
+
+    100% {
+        transform: rotateZ(0deg);
+    }
 }
 
 @keyframes mover {
-    from{left: 0;}
-    to{left: 940px;}
+    from {
+        left: 0;
+        transform: rotateY(-180deg);
+    }
+
+    20% {
+        transform: rotateY(-180deg);
+    }
+
+    to {
+        left: 940px;
+    }
 }
 
-#muro{
+#muro {
     position: absolute;
     top: 289px;
     left: 1200px;
 }
 
-#muro img{
+#muro img {
     width: 287px;
+    animation-name: vibrar;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.1s;
 }
 
-#explosion{
+#explosion {
     position: absolute;
     top: 56px;
     left: 845px;
 }
 
-#explosion img{
+#explosion img {
     width: 500px;
     opacity: 0;
     animation-name: explosion;
-    animation-duration: 0.5s;
+    animation-duration: 1.3s;
     animation-fill-mode: forwards;
-    animation-delay: 3.8s;
+    animation-delay: 3.42s;
 }
 
-#escombro{
+#escombro {
     position: absolute;
     top: 409px;
     left: 791px;
 }
 
-#escombro img{
+#escombro img {
     width: 120px;
     opacity: 0;
     animation-name: escombro;
@@ -90,62 +243,189 @@ body{
 }
 
 @keyframes escombro {
-    from{opacity: 0;}
-    to{opacity: 1;}
-    
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
 }
 
 @keyframes explosion {
-    from{opacity: 0;}
-    to{opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+    }
 }
 
-#columna{
+#columna {
     position: absolute;
     top: 274px;
     left: 720px;
     animation-name: caer;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-    animation-delay: 2.2s; 
+    animation-delay: 2.2s;
+}
+
+.digglets img {
+    width: 69px;
+    position: absolute;
+}
+
+#digglet1 {
+    position: absolute;
+    top: 449px;
+    left: 546px;
+    animation-name: subirBajar;
+    animation-duration: 3s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+
+}
+
+#digglet2 {
+    position: absolute;
+    top: 591px;
+    left: 399px;
+}
+
+#digglet3 {
+    position: absolute;
+    top: 591px;
+    left: 699px;
+}
+
+
+@keyframes subirBajar {
+    0% {
+        opacity: 1;
+    }
+
+    5% {
+        opacity: 0;
+        top: 501px;
+    }
+
+    95% {
+        opacity: 0;
+        rotate: 3600000deg;
+    }
+
+    100% {
+        opacity: 1;
+        left: 899px;
+        top: 449px;
+        rotate: -3600000deg;
+    }
+}
+
+@keyframes ambulancia {
+    from {
+        left: -450px;
+    }
+
+    20% {
+        left: 382px;
+    }
+
+    21% {
+        left: 395px;
+        top: 274px;
+        rotate: -5deg;
+    }
+
+    50% {
+        left: 595px;
+        top: 204px;
+        rotate: -35deg;
+        width: 450px;
+    }
+
+    100% {
+        left: 1500px;
+        top: -200px;
+        rotate: -45deg;
+        width: 30px;
+    }
+
+}
+
+#ambulancia {
+    position: absolute;
+    top: 284px;
+    left: -450px;
+    transform: rotateY(180deg);
+    width: 450px;
 }
 
 @keyframes caer {
-    from{transform: rotateZ(0deg);}
-    to{
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
         transform-origin: 150px 250px;
-        transform: rotateZ(50deg);}
+        transform: rotateZ(50deg);
+    }
 }
 
-#columna img{
+#columna img {
     width: 230px;
 }
 
-#columna2{
+#columna2 {
     position: absolute;
     top: 350px;
     left: 624px;
 }
 
-#columna2 img{
+#columna2 img {
     width: 230px;
 }
 
-#humo{
+#humo {
     position: absolute;
     top: 244px;
     left: 795px;
     opacity: 0;
     animation-name: humo;
     animation-duration: 1.2s;
-    animation-delay: 3s; 
+    animation-delay: 3s;
 }
 
 @keyframes humo {
-    from{opacity: 0;}
-    20%{opacity: 0.5;}
-    40%{opacity: 0.8;}
-    50%{opacity: 1;}
-    80%{opacity: 0.2;}
-    100%{opacity: 0;}
+    from {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.5;
+    }
+
+    40% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
