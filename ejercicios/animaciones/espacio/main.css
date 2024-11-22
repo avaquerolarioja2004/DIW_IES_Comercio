@@ -1,13 +1,15 @@
 body {
     margin: 0;
-    background: black;
+    background-image: url('./img/espacio.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 #cockpit {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('./img/cockpit.png');
+    background-image: url('./img/coockpit.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,26 +35,31 @@ body {
     animation: asteroideMove 10s linear infinite;
 }
 
-.planeta1 {
-    width: 100px;
-    height: 100px;
-    background-image: url('./img/planeta1.webp');
-    top: 20%;
-    left: 10%;
-}
-
 .planeta2 {
     width: 150px;
     height: 150px;
     background-image: url('./img/planeta2.webp');
-    top: 50%;
-    left: 70%;
+    top: 47%;
+    left: 85%;
+}
+
+.planeta1 {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-image: url('./img/planeta1.webp');
+    top: 15%;
+    left: 15%;
 }
 
 .satelite {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
     width: 30px;
     height: 30px;
     background-image: url('./img/satelite.png');
+    transform-origin: -50px -50px;
     animation: sateliteOrbit 5s linear infinite;
 }
 
@@ -79,10 +86,12 @@ body {
     background-image: url('./img/palanca.png');
     cursor: pointer;
     transition: transform 0.3s;
+    transform: rotate(-90deg);
 }
 
 #palanca:hover {
     transform: scale(1.1);
+    transform: rotate(-86deg);
 }
 
 #indicadores {
