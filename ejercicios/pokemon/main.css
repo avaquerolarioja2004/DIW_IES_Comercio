@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+}
+
+.carta {
+    position: relative;
+    width: 300px;
+    height: 480px;
+}
+
+.lapras {
+    position: absolute;
+    left: 0;
+}
+
+.charizard {
+    position: absolute;
+    left: 500px;
+}
+
+.carta div {
+    width: 300px;
+    height: 480px;
+    background-size: cover;
+    background-position: center;
+}
+
+.reverso {
+    background-image: url('./img/reverso.png');
+}
+
+.lapras .anverso {
+    background-image: url('./img/Lapras-Genetic-Apex.png');
+}
+
+.charizard .anverso {
+    background-image: url('./img/genetic-apex-a1-280-charizard-ex.png');
+}

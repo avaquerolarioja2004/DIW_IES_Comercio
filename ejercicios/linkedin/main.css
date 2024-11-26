@@ -21,6 +21,7 @@ header {
 
 header .logo img {
     width: 40px;
+    cursor: pointer;
 }
 
 header nav ul {
@@ -137,6 +138,7 @@ main {
 .cabecera-info img{
     width: 25px;
     margin-right: 15px;
+    cursor: pointer;
 }
 
 .cabecera-info {
@@ -173,6 +175,7 @@ main {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
