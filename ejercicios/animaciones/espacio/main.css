@@ -1,149 +1,129 @@
 body {
     margin: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url('./img/espacio.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background-image 1s, transform 10s;
-    position: relative;
-    z-index: 1; 
-}
-
-body.activo {
-    transform: scale(2);
-    background-image: url('./img/hiperespacio.jpg');
-}
-
-body.flash {
-    background-color: black;
-    background-image: none;
+    overflow: hidden;
+    background: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
 }
 
 #cockpit {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-image: url('./img/coockpit.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    z-index: 3;
+    z-index: 10;
 }
 
 #espacio {
     position: absolute;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 2;
-}
-
-.asteroide, .planeta1, .planeta2, .satelite, #nave_siguiendo, #nave_seguida {
-    position: absolute;
+    height: 100%;
+    background: url('./img/espacio.jpg') no-repeat center center;
     background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 2; 
+    transition: transform 1s, background-image 1s;
+    z-index: 5;
+}
 
 .asteroide {
+    position: absolute;
     width: 50px;
     height: 50px;
-    background-image: url('./img/asteroide.png');
-    animation: asteroideMove 10s linear infinite;
-}
-
-.planeta2 {
-    width: 150px;
-    height: 150px;
-    background-image: url('./img/planeta2.webp');
-    top: 47%;
-    left: 85%;
-}
-
-.planeta1 {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    background-image: url('./img/planeta1.webp');
-    top: 15%;
-    left: 15%;
-}
-
-.satelite {
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    width: 30px;
-    height: 30px;
-    background-image: url('./img/satelite.png');
-    transform-origin: -50px -50px;
-    animation: sateliteOrbit 5s linear infinite;
+    background: url('./img/asteroide.png') no-repeat center center;
+    background-size: cover;
 }
 
 #nave_siguiendo {
-    width: 60px;
-    height: 60px;
-    background-image: url('./img/nave_siguiendo.png');
-    animation: naveSiguiendoMove 3s linear infinite;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background: url('./img/nave_siguiendo.png') no-repeat center center;
+    background-size: cover;
 }
 
 #nave_seguida {
-    width: 60px;
-    height: 60px;
-    background-image: url('./img/nave_perseguida.webp');
-    animation: naveSeguidaMove 3s linear infinite;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background: url('./img/nave_perseguida.webp') no-repeat center center;
+    background-size: cover;
+}
+
+.planeta1{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url('./img/planeta1.webp') no-repeat center center;
+    background-size: cover;
+}
+
+.planeta2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url('./img/planeta2.webp') no-repeat center center;
+    background-size: cover;
+}
+
+.satelite {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('./img/satelite.png') no-repeat center center;
+    background-size: cover;
+    animation: orbit 10s linear infinite;
 }
 
 #palanca {
     position: absolute;
-    bottom: 10%;
-    left: 50%;
-    width: 50px;
-    height: 100px;
-    background-image: url('./img/palanca.png');
+    bottom: 127px;
+    left: 59%;
+    transform: translateX(-50%);
+    width: 100px;
     cursor: pointer;
     transition: transform 0.3s;
-    transform: rotate(-90deg);
-    z-index: 4;
+    z-index: 15;
+    rotate: -90deg;
 }
 
 #palanca:hover {
-    transform: scale(1.1);
-    transform: rotate(-86deg);
+    transform: translateX(-50%) scale(1.2);
+    filter: drop-shadow(0 0 10px rgb(221, 221, 83)) drop-shadow(0 0 20px rgb(255, 174, 0));
 }
 
-#indicadores {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 200px;
-    height: 100px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid #00ff00;
-    color: #00ff00;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 10px;
+.activo #espacio {
+    background-image: url('./img/hiperspace.jpg');
+    transform: scale(4);
 }
 
-@keyframes asteroideMove {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100vh); }
+.flash {
+    animation: flash 1s;
 }
 
-@keyframes sateliteOrbit {
-    0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
-    100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
 }
 
-@keyframes naveSiguiendoMove {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(20px); }
-    100% { transform: translateX(0); }
+@keyframes hyperspace {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
-@keyframes naveSeguidaMove {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(-20px); }
-    100% { transform: translateX(0); }
+@keyframes flash {
+    0%, 100% {
+        background: white;
+    }
+    50% {
+        background: black;
+    }
 }

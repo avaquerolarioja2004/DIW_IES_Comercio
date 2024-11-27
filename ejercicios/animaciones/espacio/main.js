@@ -2,24 +2,20 @@ var animacionActiva = false;
 
 document.getElementById('palanca').addEventListener('click', function() {
     var body = document.body;
-    var elementos = document.querySelectorAll('#espacio > div');
+    var espacio = document.getElementById('espacio');
 
     if (!animacionActiva) {
         // Inicia la animación
         animacionActiva = true;
         body.classList.add('activo');
-        elementos.forEach(function(elemento) {
-            elemento.style.visibility = 'hidden';
-        });
+        espacio.classList.add('activo');
     } else {
         // Termina la animación
         animacionActiva = false;
         body.classList.add('flash');
         setTimeout(function() {
             body.classList.remove('activo', 'flash');
-            elementos.forEach(function(elemento) {
-                elemento.style.visibility = 'visible';
-            });
-        }, 1000);
+            espacio.classList.remove('activo');
+        }, 100);
     }
 });
