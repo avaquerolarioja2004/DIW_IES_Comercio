@@ -9,13 +9,14 @@ document.getElementById('palanca').addEventListener('click', function() {
         animacionActiva = true;
         body.classList.add('activo');
         espacio.classList.add('activo');
+        espacio.style.animation = 'none';
     } else {
         // Termina la animación
         animacionActiva = false;
-        body.classList.add('flash');
         setTimeout(function() {
-            body.classList.remove('activo', 'flash');
+            body.classList.remove('activo');
             espacio.classList.remove('activo');
-        }, 100);
+            espacio.style.animation = 'moveBackground 10s linear infinite';
+        }, 50);
     }
 });
