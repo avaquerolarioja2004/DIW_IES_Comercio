@@ -1,3 +1,4 @@
+/*Necesito CSS motion path*/
 body {
     margin: 0;
     overflow: hidden;
@@ -9,17 +10,18 @@ body {
 #cockpit {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     background-image: url('./img/coockpit.png');
     background-size: cover;
     background-position: center;
     z-index: 10;
+    bottom: 1570px;
 }
 
 #espacio {
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vw;
     background: url('./img/espacio.jpg') no-repeat center center;
     background-size: 200%;
     transition: transform 1s, background-image 1s;
@@ -46,39 +48,39 @@ body {
     }
     100% {
         left: 100%;
-        top: 50%;
+        top: 10%;
     }
 }
 
 @keyframes moveAsteroide3 {
     0% {
         left: -50px;
-        top: 80%;
+        top: 20%;
     }
     100% {
         left: 100%;
-        top: 80%;
+        top: 60%;
     }
 }
 
-.asteroide1 {
+.nyan-cat {
     position: absolute;
     width: 50px;
     height: 50px;
-    background: url('./img/asteroide.png') no-repeat center center;
+    background: url('./img/Nyan-cat.webp') no-repeat center center;
     background-size: cover;
-    z-index: 18;
-    animation: moveAsteroide1 8s linear infinite;
+    animation: moveAsteroide1 4s linear infinite;
+    z-index: 8;
 }
 
 .asteroide2 {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
     background: url('./img/asteroide.png') no-repeat center center;
     background-size: cover;
-    z-index: 18;
     animation: moveAsteroide2 12s linear infinite;
+    z-index: 9;
 }
 
 .asteroide3 {
@@ -87,8 +89,8 @@ body {
     height: 50px;
     background: url('./img/asteroide.png') no-repeat center center;
     background-size: cover;
-    z-index: 18;
     animation: moveAsteroide3 15s linear infinite;
+    z-index: 8;
 }
 
 #nave_siguiendo {
@@ -120,7 +122,7 @@ body {
     opacity: 0;
     top: 30%;
     z-index: 9;
-    transform: rotateX(-1);
+    transform: rotateY(-1);
 }
 
 .planeta1{
@@ -174,6 +176,16 @@ body {
 .activo #espacio {
     background-image: url('./img/hiperspace.jpg');
     transform: scale(4);
+}
+
+.activo .asteroide1,
+.activo .asteroide2,
+.activo .asteroide3,
+.activo #nave_siguiendo,
+.activo #nave_seguida,
+.activo .planeta1,
+.activo .planeta2{
+    display: none; 
 }
 
 @keyframes orbit {
