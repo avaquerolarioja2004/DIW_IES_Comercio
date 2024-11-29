@@ -17,16 +17,16 @@ body {
 }
 
 .carta {
-    width: 250px;
-    height: 349px;
+    width: 180px;
+    height: 250px;
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
 .carta div {
-    width: 250px;
-    height: 349px;
+    width: 180px;
+    height: 250px;
     background-size: contain;
     position: absolute;
 }
@@ -82,12 +82,12 @@ body {
     z-index: 10;
 }
 
-.carta:hover .anverso {
+.carta.seleccionada .anverso {
     transform: rotateY(0deg);
     z-index: 10;
 }
 
-.carta:hover .reverso {
+.carta.seleccionada .reverso {
     transform: rotateY(180deg);
     z-index: 0;
 }
