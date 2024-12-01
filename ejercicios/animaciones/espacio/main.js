@@ -6,7 +6,7 @@ document.getElementById('palanca').addEventListener('click', function() {
     var hyperspaceAudio = document.getElementById('hyperspaceAudio');
     var nyanCatAudio = document.getElementById('nyanCatAudio');
     var interstellarAudio = document.getElementById('interstellarAudio');
-
+    hyperspaceAudio.currentTime = 0;
     if (!animacionActiva) {
         animacionActiva = true;
         body.classList.add('activo');
@@ -20,8 +20,8 @@ document.getElementById('palanca').addEventListener('click', function() {
         setTimeout(function() {
             body.classList.remove('activo');
             espacio.classList.remove('activo');
-            espacio.style.animation = 'moveBackground 10s linear infinite';
-            hyperspaceAudio.pause();
+            espacio.style.animation = 'moveEspacio 25s linear infinite';
+            hyperspaceAudio.play();
             interstellarAudio.pause();
             nyanCatAudio.play();
         }, 50);

@@ -1,4 +1,3 @@
-/*Necesito CSS motion path*/
 body {
     margin: 0;
     overflow: hidden;
@@ -10,34 +9,33 @@ body {
 #cockpit {
     position: relative;
     width: 100vw;
-    height: 120vh;
+    height: 110vh;
     background-image: url('./img/coockpit.png');
     background-size: cover;
     background-position: center;
     z-index: 10;
-    bottom: 1570px;
+    bottom: 696px;
 }
 
 #espacio {
     position: relative;
-    width: 100%;
-    height: 100vw;
+    width: 100vw;
+    height: 100vh;
     background: url('./img/espacio.jpg') no-repeat center center;
-    background-size: 200%;
+    background-size: cover;
     transition: transform 1s, background-image 1s;
     z-index: 5;
-    animation: moveBackground 10s linear infinite;
+    animation: moveEspacio 25s linear infinite;
 }
 
 
-@keyframes moveAsteroide1 {
+@keyframes moveNyanCat {
     0% {
-        left: -50px;
-        top: 10%;
+        offset-path: path('M0,0 L200,0 C300,100 400,0 500,100 L700,100');
+        offset-distance: 0%;
     }
     100% {
-        left: 100%;
-        top: 10%;
+        offset-distance: 100%;
     }
 }
 
@@ -69,8 +67,11 @@ body {
     height: 50px;
     background: url('./img/Nyan-cat.webp') no-repeat center center;
     background-size: cover;
-    animation: moveAsteroide1 4s linear infinite;
+    animation: moveNyanCat 4s linear infinite;
     z-index: 8;
+    rotate: 50deg;
+    top: 160px;
+    right: 750px;
 }
 
 .asteroide2 {
@@ -175,7 +176,6 @@ body {
 
 .activo #espacio {
     background-image: url('./img/hiperspace.jpg');
-    transform: scale(4);
 }
 
 .activo .asteroide1,
@@ -184,7 +184,9 @@ body {
 .activo #nave_siguiendo,
 .activo #nave_seguida,
 .activo .planeta1,
-.activo .planeta2{
+.activo .planeta2,
+.activo .satelite,
+.activo .nyan-cat {
     display: none; 
 }
 
@@ -206,18 +208,21 @@ body {
     }
 }
 
-@keyframes moveBackground {
+@keyframes moveEspacio {
     0% {
-        background-position: 0 0;
+        transform: translate(0, 0);
     }
-    33% {
-        background-position: -150px 0;
+    25% {
+        transform: translate(10px, 10px);
     }
-    66% {
-        background-position: -150px -150px;
+    50% {
+        transform: translate(-10px, -10px);
+    }
+    75% {
+        transform: translate(10px, -10px);
     }
     100% {
-        background-position: 0 0;
+        transform: translate(0, 0);
     }
 }
 
