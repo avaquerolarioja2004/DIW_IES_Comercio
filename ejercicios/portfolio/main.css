@@ -166,3 +166,16 @@ body.dark-mode .list-group-item{
 body.dark-mode .list-group-item {
     border-color: #444;
 }
+
+.card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+html {
+    scroll-behavior: smooth;
+}
