@@ -4,6 +4,7 @@ body {
     color: #343a40;
     margin: 0;
     padding: 0;
+    text-align: justify;
 }
 
 header {
@@ -176,6 +177,12 @@ body.dark-mode .list-group-item {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-html {
-    scroll-behavior: smooth;
+.animate__delay-2s {
+    animation-delay: .5s;
+}
+.animate__delay-3s {
+    animation-delay: 1.5s;
+}
+.animate__delay-4s {
+    animation-delay: 2s;
 }
