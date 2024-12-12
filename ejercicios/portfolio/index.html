@@ -7,12 +7,12 @@
     <title>Portafolio de Ángel Vaquero</title>
     <link rel="stylesheet" href="main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
     <header class="bg-primary text-white text-center py-3">
-        <h1>Ángel Vaquero</h1>
-        <p>Programador Full Stack con enfoque a Big Data</p>
+        <h1><span id="typed"></span></h1>
         <label class="switch">
             <input type="checkbox" id="darkModeToggle">
             <span class="slider round"></span>
@@ -20,7 +20,7 @@
     </header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Portfolio</a>
+            <a class="navbar-brand" href="#">.portfolio()</a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,29 +28,47 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="sobremi.html">Sobre Mí</a>
+                        <a class="nav-link" href="sobremi.html">.sobreMi()</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="formacion.html">Formación</a>
+                        <a class="nav-link" href="formacion.html">.formacion()</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="proyectos.html">Proyectos</a>
+                        <a class="nav-link" href="proyectos.html">.proyectos()</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <main class="container my-5 flex-grow-1">
-        <section class="hero bg-light text-center py-5 card">
-            <h2>Bienvenido a mi portfolio</h2>
-            <p>Explora mis proyectos y conoce más sobre mi trabajo como programador.</p>
-        </section>
+        <a href="sobremi.html" class="text-decoration-none">
+            <section class="hero bg-light text-center py-5 card">
+                <h2>Bienvenido a mi portfolio</h2>
+                <p>Explora mis proyectos y conoce más sobre mi trabajo como programador.</p>
+            </section>
+        </a>
     </main>
     <footer class="text-white text-center py-3 mt-auto">
-        <p>&copy; 2023 Ángel Vaquero</p>
+        <p>&copy; 2024 Ángel Vaquero | <a class="nav-link d-inline" href="referencias.html">.referencias()</a></p>
     </footer>
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var typed = new Typed('#typed', {
+            strings: [
+                "Ángel Vaquero",
+                "Programador Full Stack",
+                "System.out.println<br>('Ángel Vaquero');",
+                "print('Ángel Vaquero')",
+                "echo 'Ángel Vaquero';"
+            ],
+            typeSpeed: 50,
+            backSpeed: 50,
+            backDelay: 2000,
+            loop: true,
+            smartBackspace: false
+        });
+    </script>
 </body>
 
 </html>
