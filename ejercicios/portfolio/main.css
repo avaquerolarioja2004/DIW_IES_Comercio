@@ -1,6 +1,6 @@
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(185, 255, 254);
+    background-color: rgb(185, 255, 254) !important;
     color: #343a40;
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
     position: fixed;
     width: 30px;
     height: 30px;
-    border: 2px solid #0d6efd;
+    border: 2px solid rgb(8, 4, 81);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -24,7 +24,7 @@ body {
     position: fixed;
     width: 10px;
     height: 10px;
-    background-color: #0d6efd;
+    background-color: rgba(2, 0, 36, 1);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -47,7 +47,7 @@ body.dark-mode .custom-cursor-dot {
 }
 
 body.dark-mode .custom-cursor.click {
-    background-color: rgba(0, 123, 255, 0.2);
+    background-color: rgba(2, 0, 36, 1);
     border-color: #f5f5f5;
 }
 
@@ -55,7 +55,7 @@ body.dark-mode .custom-cursor.click {
     width: 45px;
     height: 45px;
     background-color: rgba(0, 123, 255, 0.2);
-    border-color: #007bff;
+    border-color: rgba(2, 0, 36, 1);
 }
 
 body.dark-mode .custom-cursor.enlarged {
@@ -177,7 +177,7 @@ button:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #27272a;
     transition: .4s;
     border-radius: 34px;
     cursor: none;
@@ -190,20 +190,20 @@ button:hover {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(185, 255, 254);
     transition: .4s;
     border-radius: 50%;
     cursor: none;
 }
 
 input:checked+.slider {
-    background-color: #616165;
+    background-color: #d4d4df;
     cursor: none;
 }
 
 input:checked+.slider:before {
     transform: translateX(26px);
-    background-color: #0d6efd;
+    background-color: #132e55;
     cursor: none;
 }
 
@@ -270,7 +270,7 @@ body.dark-mode .list-group-item {
 }
 
 .card:hover {
-    transform: scale(1.07);
+    transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -290,9 +290,19 @@ body.dark-mode .navbar-toggler {
     background-color: #d3d3d3;
 }
 
+#contactButton {
+    background-color: rgb(98, 185, 184) !important;
+    border-color: #132761;
+}
+
 body.dark-mode .navbar-toggler:active,
 body.dark-mode .navbar-toggler:focus {
     background-color: #f5f5f5;
+}
+
+.mobile .custom-cursor, 
+.mobile .custom-cursor-dot {
+    display: none;
 }
 
 @media (max-width: 576px) {
@@ -315,8 +325,20 @@ body.dark-mode .navbar-toggler:focus {
         align-items: center;
     }
 
-    .custom-cursor, .custom-cursor-dot {
-        display: none;
+}
+
+@media (max-width: 768px) {
+
+    .d-flex {
+        flex-direction: column;
     }
 
+    .animate__animated {
+        animation-name: none;
+    }
+
+    .img-fluid {
+        width: 100%;
+        height: auto;
+    }
 }

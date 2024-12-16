@@ -42,27 +42,39 @@ let cursorX = 0, cursorY = 0;
 let dotX = 0, dotY = 0;
 
 document.addEventListener('mousemove', (e) => {
-    dotX = e.clientX-2;
-    dotY = e.clientY-2;
-    cursorDot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+    if (!isMobile()) {
+        dotX = e.clientX;
+        dotY = e.clientY;
+        cursorDot.style.transform = `translate(${dotX - 5}px, ${dotY - 5}px)`;
+    }
 });
 
 function animateCursor() {
-    cursorX += (((dotX-15) - cursorX) * 0.1);
-    cursorY += ((dotY-15) - cursorY) * 0.1;
-    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+    //ToDo
+    //compruebo si es grande o pequeña para ajustar el tamaño
+    if (!isMobile()) {
+        cursorX += (((dotX - 15) - cursorX) * 0.1);
+        cursorY += ((dotY - 15) - cursorY) * 0.1;
+        cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+    }
     requestAnimationFrame(animateCursor);
 }
 
-animateCursor();
+if(!isMobile()){
+    animateCursor();
+}
 
-document.addEventListener('click', () => {
-    cursor.classList.add('click');
-    cursor.classList.add('enlarged');
-    setTimeout(() => {
-        cursor.classList.remove('click');
+
+document.addEventListener('mousedown', () => {
+    if (!isMobile()) {
+        cursor.classList.add('enlarged');
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    if (!isMobile()) {
         cursor.classList.remove('enlarged');
-    }, 150);
+    }
 });
 
 document.querySelectorAll('a, button, input, textarea, .card').forEach((el) => {
@@ -74,15 +86,35 @@ document.querySelectorAll('a, button, input, textarea, .card').forEach((el) => {
     });
 });
 
-const updateCursorStyle = () => {
-    if (document.body.classList.contains('dark-mode')) {
-        cursor.classList.add('dark-mode');
-    } else {
-        cursor.classList.remove('dark-mode');
-    }
-};
+document.querySelectorAll('a, button, input, textarea, .card').forEach((el) => {
+    el.addEventListener('mouseover', () => {
+        if (!isMobile()) {
+            cursor.classList.add('enlarged');
+        }
+    });
+    el.addEventListener('mouseout', () => {
+        if (!isMobile()) {
+            cursor.classList.remove('enlarged');
+        }
+    });
+});
 
 document.getElementById('darkModeToggle').addEventListener('change', updateCursorStyle);
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateCursorStyle);
 
-updateCursorStyle();
+if(!isMobile()){
+    updateCursorStyle();
+}
+
+
+function isMobile() {
+    return /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+}
+
+function applyMobileStyles() {
+    if (isMobile()) {
+        document.body.classList.add('mobile');
+    }
+}
+
+applyMobileStyles();
