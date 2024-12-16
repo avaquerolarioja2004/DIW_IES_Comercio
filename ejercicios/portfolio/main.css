@@ -138,6 +138,10 @@ a:hover {
     cursor: none;
 }
 
+a{
+    border-radius: 8px;
+}
+
 button {
     transition: background-color 0.3s ease, color 0.3s ease;
     cursor: none;
@@ -340,5 +344,9 @@ body.dark-mode .navbar-toggler:focus {
     .img-fluid {
         width: 100%;
         height: auto;
+    }
+
+    .custom-cursor , .custom-cursor-dot {
+        display: none;
     }
 }
